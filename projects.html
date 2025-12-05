@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="https://github.com/miledhomairah/portfolio/blob/main/favicon.ico?raw=true" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/miledhomairah/portfolio/blob/main/apple-touch-icon.png?raw=true">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/miledhomairah/portfolio/blob/main/favicon-32x32.png?raw=true">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/miledhomairah/portfolio/blob/main/favicon-16x16.png?raw=true">
+  <link rel="manifest" href="site.webmanifest">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miled Web Development</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #6366f1;
+      --bg: #f8f9ff;
+      --text: #1e1e2f;
+      --card-bg: #ffffff;
+      --radius: 18px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: var(--bg); color: var(--text); animation: fadeIn 0.8s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    header { text-align: center; padding: 70px 20px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; animation: slideDown 0.8s ease; }
+    @keyframes slideDown { from { transform: translateY(-40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    nav { display: flex; justify-content: center; background: transparent; margin-top: 15px; gap: 30px; }
+    nav a { text-decoration: none; color: var(--primary); font-weight: 600; position: relative; }
+    nav a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 3px; background: var(--primary); border-radius: 3px; transition: 0.3s; }
+    nav a:hover::after { width: 100%; }
+    .section { max-width: 1000px; background: var(--card-bg); margin: 40px auto; padding: 40px; border-radius: var(--radius); box-shadow: 0px 10px 28px rgba(0,0,0,0.1); animation: floatUp 0.7s ease; }
+    @keyframes floatUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .package { border-radius: var(--radius); padding: 25px; background: #f0f2ff; transition: 0.3s; margin-bottom: 20px; cursor: pointer; }
+    .package:hover { transform: translateY(-8px); box-shadow: 0px 12px 30px rgba(120,120,255,0.3); }
+    .product-page { display: none; margin-top: 20px; padding: 20px; border-radius: var(--radius); background: #e4e7ff; box-shadow: 0 8px 20px rgba(0,0,0,0.1); animation: fadeIn 0.5s ease; }
+    footer { text-align: center; padding: 30px; color: white; margin-top: 60px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-top-left-radius: 40px; border-top-right-radius: 40px; animation: slideUp 0.8s ease; }
+    @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="font-size: 42px; font-weight: 700;">Miled Web Development</h1>
+    <p style="font-size: 18px; opacity: 0.9;">Clean • Fast • Modern Websites</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div id="portfolio" class="section">
+    <h2>Portfolio</h2>
+    <p>I Am An Young Programer Looking To Freelancing, but it is not available to my age.</p>
+    <p>My Most Recent Projects:</p>
+    <br>
+    <iframe src="https://miledhomairah.github.io/mc-modding-contest/" style="width:100%; height:500px; border:none; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.1);"></iframe>
+    <iframe src="https://miledhomairah.github.io/" style="width:100%; height:500px; border:none; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.1);"></iframe>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p style="font-size: 18px; line-height: 1.8;">
+      📱 WhatsApp: <strong>+961 3 376 607</strong><br>
+      📧 Email: <strong><a href="mailto:miledghadybernardsanaa@gmail.com">miledghadybernardsanaa@gmail.com</a></strong><br>
+      📸 Instagram: <strong>@miledwebservices</strong>
+    </p>
+  </div>
+
+  <footer>
+    © 2025 Miled Web Development
+  </footer>
+
+  <script>
+    function showProduct(id) {
+      // Hide all product pages
+      document.querySelectorAll('.product-page').forEach(p => p.style.display = 'none');
+      // Show selected
+      document.getElementById(id).style.display = 'block';
+      // Scroll to section
+      document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+    }
+
+    function contactMe() {
+      window.location.href = '#contact';
+    }
+  </script>
+</body>
+</html>
